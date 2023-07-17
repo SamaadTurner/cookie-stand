@@ -78,7 +78,7 @@ const Tokoyo = {
     outputElement.appendChild(listElement);
   }
 };
-
+console.log(Seattle.cookiesPerHour);
 // Object literal for the third shop location
 const Dubai = {
   minCustomers: 11,
