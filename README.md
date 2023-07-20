@@ -1,3 +1,4 @@
 # cookie-stand
 
-<img width="656" alt="Screenshot 2023-07-18 at 9 17 02 AM" src="https://github.com/SamaadTurner/cookie-stand/assets/86858940/44bdfc63-5328-4c69-853e-9062a8e5e393">
+
+<img width="287" alt="Screenshot 2023-07-12 at 9 31 46 PM" src="https://github.com/SamaadTurner/cookie-stand/assets/86858940/1dc788da-8094-4cde-b5a8-8f93f1da59b8">
