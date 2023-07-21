@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content">
+        <!-- <img src="assets/salmon.png" class="salmon" alt="" /> -->
+    </div>
+    <h1>Welcome Salmon Cookies!</h1>
+    <p>Where the love for sweets and the passion for a healthy ecosystem meet</p>
+
+
+    <form id="store-form">
+        <fieldset>
+            <legend>Add A Store</legend>
+            <div class="store-input">
+                <label for="store-name">Store Name</label>
+                <input id="store-name" type="text" name="storeName" placeholder="" required>
+            </div>
+            <div class="store-input">
+                <label for="store-name">Minimum Customers</label>
+                <input id="store-name" type="number" name="minCustomer" placeholder="" required>
+            </div>
+            <div class="store-input">
+                <label for="store-name">Maxiumum Customers</label>
+                <input id="store-name" type="number" name="maxCustomer" placeholder="">
+            </div>
+            <div class="store-input">
+                <label for="store-name">Average Customer</label>
+                <input id="store-name" type="number" name="avgCookies" placeholder="" required>
+            </div>
+            <button type="submit">Create Store</button>
+        </fieldset>
+    </form>
+
+
+    <h2>Locations</h2>
+    <div class="box">
+
+
+        <!--Start of table-->
+        <table>
+            <thead id="table-head">
+
+            </thead>
+            <tr>
+                <th>
+                    Store Name
+                </th>
+                <th>6am</th>
+                <th>7am</th>
+                <th>8am</th>
+                <th>9am</th>
+                <th>10am</th>
+                <th>11am</th>
+                <th>12pm</th>
+                <th>1pm</th>
+                <th>2pm</th>
+                <th>3pm</th>
+                <th>4pm</th>
+                <th>5pm</th>
+                <th>6pm</th>
+                <th>7pm</th>
+                <th>Daily Totals</th>
+
+            </tr>
+            <tbody id="store-sales">
+
+            </tbody>
+            <tfoot id="sales-totals">
+
+            </tfoot>
+        </table>
+</body>
+<script src="app.js"></script>
+
+
+</html>

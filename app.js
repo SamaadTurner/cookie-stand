@@ -177,17 +177,20 @@ function newCell(newData, element = 'td') {
 //   // Clear the form inputs after submission
 //   event.target.reset();
 // }
-let formElement = document.getElementById('store-form');
-function handleSubmit(event){
-  event.preventDefault();
+// let formElement = document.getElementById('store-form');
+// function handleSubmit(event){
+//   event.preventDefault();
 
-  let storeName = event.target.storeName.value;
-  let storeMinCust = event.target.minCustomer.value;
-  let storeMaxCust = event.target.maxCustomer.value;
-  let storeAvgCookies = event.target.avgCookies.value;
+//   let storeName = event.target.storeName.value;
+//   let storeMinCust = event.target.minCustomer.value;
+//   let storeMaxCust = event.target.maxCustomer.value;
+//   let storeAvgCookies = event.target.avgCookies.value;
 
-  let newStore = new Store(storeName, storeMinCust, storeMaxCust, storeAvgCookies);
-  location.push(newStore);
+//   let newStore = new Store(storeName, storeMinCust, storeMaxCust, storeAvgCookies);
+//   location.push(newStore);
 
-  getSales ([newStore]);
-}
+//   getSales ([newStore]);
+
+
+
+// }
