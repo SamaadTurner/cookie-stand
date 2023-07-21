@@ -124,56 +124,70 @@ function newCell(newData, element = 'td') {
   newCell.innerHTML = newData;
   return newCell;
 }
-let element = document.getElementById('store-form');
+// let element = document.getElementById('store-form');
 
-function CookieStand(name, minCust, maxCust, avgSale) {
-  // define our store properties
-  this.name = name;
-  this.minCustomers = minCust;
-  this.maxCustomers = maxCust;
-  this.averageCookiesPerCustomer = avgSale;
-}
-CookieStand.prototype.avgSale = function(){
-  let hours = 14;
-  for (let i = 0; i < storeValues.length; i++){
-    let currentLocation = storeValues[i];
-    let dailyTotal = 0;
-    for (let j = 0; j < hours; j++) {
-      let cookies = Math.floor(currentLocation.random() * currentLocation.avgCookie);
-      currentLocation.sales.push(cookies);
-      dailyTotal += cookies;
-    }
-    currentLocation.sales.push(dailyTotal);
-  }
-};
-function handleSubmit(event) {
+// function CookieStand(name, minCust, maxCust, avgSale) {
+//   // define our store properties
+//   this.name = name;
+//   this.minCustomers = minCust;
+//   this.maxCustomers = maxCust;
+//   this.averageCookiesPerCustomer = avgSale;
+// }
+// CookieStand.prototype.avgSale = function(){
+//   let hours = 14;
+//   for (let i = 0; i < storeValues.length; i++){
+//     let currentLocation = storeValues[i];
+//     let dailyTotal = 0;
+//     for (let j = 0; j < hours; j++) {
+//       let cookies = Math.floor(currentLocation.random() * currentLocation.avgCookie);
+//       currentLocation.sales.push(cookies);
+//       dailyTotal += cookies;
+//     }
+//     currentLocation.sales.push(dailyTotal);
+//   }
+// };
+// function handleSubmit(event) {
+//   event.preventDefault();
+
+//   console.log(event.target.location.value);
+//   console.log(event.target.minCust.value);
+//   console.log(event.target.maxCust.value);
+//   console.log(event.target.avgCookie.value);
+
+//   let location = event.target.location.value;
+//   let minCust = parseInt(event.target.minCust.value);
+//   let maxCust = parseInt(event.target.maxCust.value);
+//   let avgCookie = parseInt(event.target.avgCookie.value);
+//   let sales = [];
+//   let stand = new CookieStand(location, minCust, maxCust, avgCookie, sales);
+//   storeValues.push(stand);
+//   stand.calculateSales();
+
+//   const hourlyTotals = calculateHourlyTotals();
+//   FOOTER_TABLE.innerHTML = '';
+//   let footerRow = document.createElement('tr');
+//   for (let i = 0; i <= hourlyTotals.length - 1; i++) {
+//     if (i === 0) {
+//       createHTML('th', 'Totals', footerRow);
+//     }
+//     createHTML('td', hourlyTotals[i], footerRow);
+//   }
+//   FOOTER_TABLE.appendChild(footerRow);
+
+//   // Clear the form inputs after submission
+//   event.target.reset();
+// }
+let formElement = document.getElementById('store-form');
+function handleSubmit(event){
   event.preventDefault();
 
-  console.log(event.target.location.value);
-  console.log(event.target.minCust.value);
-  console.log(event.target.maxCust.value);
-  console.log(event.target.avgCookie.value);
+  let storeName = event.target.storeName.value;
+  let storeMinCust = event.target.minCustomer.value;
+  let storeMaxCust = event.target.maxCustomer.value;
+  let storeAvgCookies = event.target.avgCookies.value;
 
-  let location = event.target.location.value;
-  let minCust = parseInt(event.target.minCust.value);
-  let maxCust = parseInt(event.target.maxCust.value);
-  let avgCookie = parseInt(event.target.avgCookie.value);
-  let sales = [];
-  let stand = new CookieStand(location, minCust, maxCust, avgCookie, sales);
-  storeValues.push(stand);
-  stand.calculateSales();
+  let newStore = new Store(storeName, storeMinCust, storeMaxCust, storeAvgCookies);
+  location.push(newStore);
 
-  const hourlyTotals = calculateHourlyTotals();
-  FOOTER_TABLE.innerHTML = '';
-  let footerRow = document.createElement('tr');
-  for (let i = 0; i <= hourlyTotals.length - 1; i++) {
-    if (i === 0) {
-      createHTML('th', 'Totals', footerRow);
-    }
-    createHTML('td', hourlyTotals[i], footerRow);
-  }
-  FOOTER_TABLE.appendChild(footerRow);
-
-  // Clear the form inputs after submission
-  event.target.reset();
+  getSales ([newStore]);
 }
