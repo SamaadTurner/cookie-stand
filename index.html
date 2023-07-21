@@ -59,15 +59,41 @@
 
 <main>
 
+
 </main>
 
+<img src="assets/salmon.png" class="salmon" alt="" />
 
 <body>
     <div id="content">
-        <img src="assets/salmon.png" class="salmon" alt="" />
+        <!-- <img src="assets/salmon.png" class="salmon" alt="" /> -->
     </div>
     <h1>Welcome Salmon Cookies!</h1>
     <p>Where the love for sweets and the passion for a healthy ecosystem meet</p>
+
+    <form id="store-form">
+        <fieldset>
+            <legend>Add A Store</legend>
+            <div class="store-input">
+                <label for="store-name">Store Name</label>
+                <input id="store-name" type="text" name="storeName" placeholder="" required>
+            </div>
+            <div class="store-input">
+                <label for="store-name">Minimum Customers</label>
+                <input id="store-name" type="number" name="minCustomer" placeholder="" required>
+            </div>
+            <div class="store-input">
+                <label for="store-name">Maxiumum Customers</label>
+                <input id="store-name" type="number" name="maxCustomer" placeholder="">
+            </div>
+            <div class="store-input">
+                <label for="store-name">Average Customer</label>
+                <input id="store-name" type="number" placeholder="" required>
+            </div>
+            <button type="submit">Create Store</button>
+        </fieldset>
+    </form>
+
 
     <h2>Locations</h2>
     <div class="box">
